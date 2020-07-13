@@ -1,6 +1,6 @@
 # Vacaciones de España
 
-Este repositorio contiene las vacaciones de España en formato csv para poder ser utilizadas en procesos automáticos. El objetivo es poder cargarlas en algún gestor de base de datos y explotarlas desde allí.
+Este repositorio contiene los días festivos de España en formato csv para poder ser utilizadas en procesos automáticos. El objetivo es poder cargarlas en algún gestor de base de datos y explotarlas desde allí.
 
 Las vacaciones se actualizan de forma manual, de modo que puede que no estén todos los años ni todos los municipios. 
 
@@ -15,8 +15,16 @@ Hay dos tipos de fichero:
 
 ### Ficheros de vacaciones
 
-Los ficheros de vacaciones están estructurados por año.
-TO-DO: completar información
+Los ficheros de vacaciones están estructurados por año. las vacaciones de cada año están en un directorio con ese año de nombre.
+
+Cada directorio contiene dos ficheros: YYYY_structure_holidays y YYYY_municipality_holidays. El primero contiene las vacaciones nacionales y de comunidades autónomas (incluyendo regiones e islas) y el segundo la vacaciones de cada municipio y entidad local. 
+
+Los ficheros tienen la misma estructura, y se han dividido para poder cargar únicamente los ficheros con vacaciones de nivel superior al municipio si es necesario.
+
+- code: código del territorio al que pertenecen las vacaciones. El código debe corresponderse con un territorio del fichero de estructura. El código se repite tantas veces como vacaciones tenga ese territorio.
+- name: Este campo es opcional y contiene el nombre del municipio. Sirve únicamente para ayudar en la edición del fichero, ya que el nombre ya está en el fichero de estructura
+- date:	fecha del día festivo, en formato dd/mm/yyyy
+- description: descripción opcional de la festividad
 
 ### Fichero de estructura
 
@@ -88,8 +96,6 @@ Nombre del municipio. No contiene el nombre oficial: el objetivo es facilitar la
 
 
 ## Como saber las vacaciones de un territorio
-
-Para el cálculo de vacaciones 
 
 Calcular las vacaciones de un territorio depende de qué tipo sean. El proceso general sería el siguiente:
 
